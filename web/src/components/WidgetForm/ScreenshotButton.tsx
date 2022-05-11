@@ -4,8 +4,8 @@ import { useState } from "react";
 import { Loading } from "../Loading";
 
 interface ScreenshotButtonProps {
-    onScreenshotTook: (screenshot: string | null) => void;
     screenshot: string | null;
+    onScreenshotTook: (screenshot: string | null) => void;
 }
 
 export function ScreeshotButton({
@@ -14,6 +14,7 @@ export function ScreeshotButton({
 }:ScreenshotButtonProps){
 
     const [IsTakingScreenshot, setIstakingScreenshot] = useState(false);
+    
     async function handleTakeScreenshot(){
         setIstakingScreenshot(true)
         const canvas = await html2canvas(document.querySelector('html')!);
@@ -24,6 +25,7 @@ export function ScreeshotButton({
         setIstakingScreenshot(false);
 
     }
+
     if(screenshot){
        return(
            <button
@@ -36,8 +38,7 @@ export function ScreeshotButton({
                 backgroundSize: 180,
             }}
            >
-               <Trash weight="fill"/>
-
+            <Trash weight="fill"/>
            </button>
        )
     }
@@ -48,12 +49,10 @@ export function ScreeshotButton({
         onClick={handleTakeScreenshot}
         className="p-2 bg-zinc-800 rounded-md border-transparent hover:bg-zinc-700 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-zinc-900 focus:ring-brand-500 "
     >
-        { IsTakingScreenshot ?
-            <Loading /> :
+        { IsTakingScreenshot ? (
+            <Loading /> ):(
         <Camera className="w-6 h-6 text-zinc-100"/>
-
-        }
-
+        )}
     </button>
     )
 }
