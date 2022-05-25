@@ -17,7 +17,7 @@ export function FeedbackTypeStep({onFeedbackTypeChanged} : onFeedbackTypeChanged
                 { Object.entries(feedbackTypes).map(([key, value])=> {
                     return(
                         <button
-                        className="bg-zinc-700 rounded-lg py-5 w-24 flex-1 flex-col items-center gap-2 border-2 border-transparent focus:border-brand-500 focus:outline-none"
+                        className="dark:bg-zinc-700 bg-zinc-100 rounded-lg py-5 w-24 flex-1 flex-col items-center gap-2 border-2 border-transparent dark:focus:border-brand-500 focus:border-brand-600 focus:outline-none drop-shadow-md"
                         key={key}
                         type="button"
                         onClick={() => onFeedbackTypeChanged(key as FeedbackType)}

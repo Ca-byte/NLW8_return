@@ -31,7 +31,7 @@ export function ScreeshotButton({
            <button
             type="button"
             onClick={()=> onScreenshotTook(null)}
-            className="p-1 w-10 h-10 rounded-md border-transparent flex justify-end items-end text-zinc-400 hover:text-zinc-100 transition-colors"
+            className="p-1 w-10 h-10 rounded-md border-transparent flex justify-end items-end dark:text-zinc-400 text-zinc-500 dark:hover:text-zinc-100 hover:text-zinc-200 transition-colors"
             style={{
                 backgroundImage: `url(${screenshot})`,
                 backgroundPosition: 'right bottom',
@@ -47,11 +47,11 @@ export function ScreeshotButton({
         <button
         type="button"
         onClick={handleTakeScreenshot}
-        className="p-2 bg-zinc-800 rounded-md border-transparent hover:bg-zinc-700 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-zinc-900 focus:ring-brand-500 "
+        className="p-2 dark:bg-zinc-800 bg-white rounded-md border-transparent dark:hover:bg-zinc-700 hover:bg-zinc-200 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 dark:focus:ring-offset-zinc-900  dark:focus:ring-brand-500 focus:ring-brand-600 "
     >
         { IsTakingScreenshot ? (
             <Loading /> ):(
-        <Camera className="w-6 h-6 text-zinc-100"/>
+        <Camera className="w-6 h-6 dark:text-zinc-100 text-zinc-800"/>
         )}
     </button>
     )
