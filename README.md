@@ -22,7 +22,6 @@ Esse projeto foi desenvolvido utilizando as seguintes tecnologias:
 ### Frontend Web
 
 - [React](https://pt-br.reactjs.org/)
-- [React Native](https://reactnative.dev/)
 - [Vite](https://vitejs.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwindss](https://tailwindcss.com/)
